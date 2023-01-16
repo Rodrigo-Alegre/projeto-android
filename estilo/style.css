@@ -73,6 +73,10 @@ nav{
     box-shadow: 0px 8px 8px 0px #000000a8; /*SOMBRA APLICADA EM OBJETOS*/
 }
 
+.cabecalho-menu{
+display: flex;
+}
+
 nav a{
     color: white; /*COR DA FONTE*/
     padding: 10px;
