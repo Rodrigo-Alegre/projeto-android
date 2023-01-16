@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+/*link importado do google fontes*/
+
+@font-face{
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype'); /*.simboliza a pasta atual - ..simboliza a pasta anterior*/
+    font-weight: normal;
+}
+
+:root{ /*qualquer variávei em CSS deve ser criada com :root*/
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'android', cursive;
+    /*as fontes após a virgula simbolizam que serão usadas automaticamente pelo css, caso a principal não exista*/
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #c5ebd6;
+    font-family:var(--font-padrao);
+}
+
+a.externo::after{
+    content: "\1F517";
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 140px; /*ALTURA MINIMA PARA O CABEÇALHO*/
+    text-align: center; /*CENTRALIZAR O TEXTO DENTRO DO CONTEÚDO DA PÁGINA*/
+    padding-top: 30px;
+}
+
+header h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.64);
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+
+header > p{
+    font-family: var(--font-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 700px; /*QUANDO ATRIBUIDO ESSA REGRA O PARAGRAFO SE TRANSFORMA EM BLOCO SENDO NECESSÁRIO ALINHAR PELA MARGEM. A INTEÇÃO DISSO PE TERNAR ESSE CONTEÚDO RESPONSIVO*/
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.368);
+}
+
+nav{
+    padding: 10px;
+    background-color: var(--cor5);
+    box-shadow: 0px 8px 8px 0px #000000a8; /*SOMBRA APLICADA EM OBJETOS*/
+    display: flex;
+    -ms-flex-align: start;
+    font-size: 1em;
+}
+
+nav a{
+    color: white; /*COR DA FONTE*/
+    padding: 10px;
+    text-decoration: none;/*REMOVE OS SUBLINHADOS POR EXEMPLO*/
+    font-weight: bold; /*TAMANHO DA FONTE/EFEITO*/
+    margin-left: 10px;
+}
+
+nav > a:hover{ /*COMANDO USADO PARA CRIAR UMA AÇÃO AO PASSAR O MOUSE*/
+    background-color: var(--cor2); 
+    color: var(--cor5);
+    text-decoration: none; /*ENVOLVE NÃO HAVER INFORMAÇÕES COMO SUBLINHADO*/
+    border-radius: 5px; /*ARREDONDAR BORDAS DE UM OBJETO*/
+    transition-duration: 0.5s; /*TEMPO DE DURAÇÃO PARA OCORRER A ANIMÇÃO CONFIGURADA NO HOVER*/
+    box-shadow: 1px 1px 10px var(--cor2);
+
+}
+
+main{ /*SE REFERE AO MENU*/
+    padding: 20px; /*É A DISTANCIA DO CONTEÚDO NAS EXTREMIDADES DA PAGINA*/
+    min-width: 300px; /*LARGURA MÍNIMA DO CONTEÚDO EXIBIDO NA PAGINA DE WEB. NESSE CASO USADO PARA QUE O CONTEÚDO FIQUE RESPONSIVO EM OUTROS DISPOSITIVOS*/
+    max-width: 1000px; /*LARGURA MÁXIMA DO CONTEÚDO EXIBIDO NA PAGINA DE WEB*/
+    margin: auto; /*MARGEM AUTOMATICA, FAZ COM QUE O DOCUMENTO FIQUE CENTRALIZADO AO CENTRO DA PAGINA*/
+    margin-bottom: 30px;/*MARGEM MÍNIMA INFERIOR DO CONTEÚDO NA PAGINA*/
+    background-color: white; /*COR DE FUNDO DO CONTEÚDO*/
+    box-shadow: 0px 0px 10px black; /*SOMBRA DO CONTEÚDO*/
+    border-bottom-left-radius: 10px; /*APLICANDO O AFEITO EM CADA EXTREMIDADE INDIVIDUALMENTE*/
+    border-bottom-right-radius: 10px; /*APLICANDO O AFEITO EM CADA EXTREMIDADE INDIVIDUALMENTE*/
+}
+
+main p{ /*SE REFERE AOS PARÁGRAFOS DENTRO DO MENU*/
+    margin: 15px 0px; /*ADICIONAR MARGEM. AQUI FOI USADO UM SHORTHAND, ONDE É POSIVEL MECHER NAS 4 POSIÇÕES, ALTURA, DIREITO, ABAIXO E, ESQUERDA, SIMBOLIZANDO O GIRO DE UM RELÓGIO PARA SE LOCALIXAR*/
+    line-height: 2em;
+    font-size: 1em;
+    text-align: justify; /*TEXTO JUSTIFICADO*/
+    text-indent: 30px /*RECUO INICIO DO PARÁGRAFO*/
+}
+
+main strong{ /*SE REFERE À PALAVRAS DESTACADAS DENTRO DO MENU*/
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--cor1);
+    color: var(--cor5);
+    padding: 2px 6px;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor5);
+}
+
+main img{ /*SE REFERE A IMAGEM QUE ESTÁ DENTRO DO MENU*/
+    width: 100%; /*DEFINNE QUE SERÁ USADO 100% DA LARGURA DA IMAGEM NA EXIBIÇÃO DA PAGINA DA WEB NO DISPOSITIVO QUE ESTEJA NAVEGANDO*/
+}
+
+main img.pequena{
+    max-width: 350px; /*USADO PARA FIXAR UM TAMANHO ÚNICO PRA A IMAGEM*/
+    display: block; /*PARA CENTRALIZAR A IMAGEM DEPENDE DE APLICAR UM DISPLAY BLOCK*/
+    margin: auto;
+}
+
+main h1{
+    color: var(--cor5); /*COR DA LETRA*/
+    font-family: var(--fonte-android); /*ESTILO DA FONTE DO TEXTO*/
+    font-size: 2em;
+    text-shadow: 1px 1px 2px var(--cor5);
+    font-weight: normal;
+}
+
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 10px;
+    padding: 10px;
+    font-weight: normal;
+}
+
+div.video{
+    background-color: var(--cor5);
+    padding: 10px;
+    margin: 0px -20px 20px -20px;
+    position: relative;
+    padding-bottom: 58%;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    width: 92%;
+    height: 92%;
+
+}
+
+aside{
+    background-color: var(--cor1);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: justify;
+    box-shadow: 2px 2px 10px rgb(96, 96, 96);
+}
+
+aside h3{
+    color: white;
+    text-shadow: 2px 2px 10px black;
+    background-color: var(--cor4);
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px; /*ARREDONDANDO EXTREMIDADES ESPECIFICAS COM SHORTHAND*/
+    margin: -10px -10px 0px -10px; /*ATRIBUINDO MARGEM PARA FORA SELECIONANDO EXTREMIDADES ESPECIFICAS COM SHORTHAND*/
+}
+
+aside ul{
+    list-style-position: inside;
+    columns: 2;
+    list-style-type: "\1F5F8\00a0\00a0\00a0"; /*INSERINDO SIMBOLOS DA EMOJIPEDIA E ADICIONANDO ESPAÇO COM O CODÓGO 00A0*/
+    
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
